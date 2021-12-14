@@ -13,6 +13,7 @@ const App = () => {
    ;
   return (
     <div className="App">
+     
       <main className="container"></main>
       <Routes>
         <Route path="/" element={<Movie handleId={handleId} />} />

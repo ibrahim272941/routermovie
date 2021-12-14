@@ -4,16 +4,16 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #015;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 .movie-container {
+  background-color: #015;
   display: flex;
   flex-wrap: wrap;
 
@@ -79,6 +79,7 @@ code {
   align-items: center;
   color: white;
   background-color: #015a69;
+  min-height: 100vh;
 }
 
 .backdrop {
@@ -131,4 +132,12 @@ code {
 .trailer iframe {
   min-width: 40rem;
   min-height: 20rem;
+}
+
+.search-form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+   background-color: rgba(0, 17, 85, 0.781);
+   color: white;
 }
