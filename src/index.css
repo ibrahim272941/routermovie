@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('/public/login-background.jpg');
 }
 
 code {
@@ -18,11 +19,13 @@ code {
   display: flex;
   flex-wrap: wrap;
 
-
+background-image: url('/public/login-background.jpg');
 
 
 }
-
+nav{
+opacity: .6;
+ }
 .movie {
   width: 14rem;
   margin-top: 1rem;

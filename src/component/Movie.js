@@ -53,28 +53,33 @@ const Movie = ({ handleId }) => {
   // };
   return (
     <>
-      <div className="search-form">
-        <h2>
-          Movie <span>DataBase</span>
-        </h2>
+      {" "}
+      <nav>
+        <div className="search-form">
+          <h2>
+            Movie <span>DataBase</span>
+          </h2>
 
-        <form action="" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            onChange={handleChange}
-            value={search}
-            placeholder="Search Film"
-          />
-        </form>
-      </div>
-      <div className="button-group">
-        <button
-          onClick={() => setNextPage(nextPage === 1 ? nextPage : nextPage - 1)}
-        >
-          Prev
-        </button>
-        <button onClick={() => setNextPage(nextPage + 1)}>Next</button>
-      </div>
+          <form action="" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={handleChange}
+              value={search}
+              placeholder="Search Film"
+            />
+          </form>
+        </div>
+        <div className="button-group">
+          <button
+            onClick={() =>
+              setNextPage(nextPage === 1 ? nextPage : nextPage - 1)
+            }
+          >
+            Prev
+          </button>
+          <button onClick={() => setNextPage(nextPage + 1)}>Next</button>
+        </div>
+      </nav>
       <div className="movie-container">
         {movies.map((data, i) => {
           return (
