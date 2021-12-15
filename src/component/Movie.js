@@ -2,26 +2,26 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import Trailer from "../pages/Trailer";
-import Time from "./Time";
 
-const FEATURED_API =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&page=1";
+
+
+
 
 const SEARCH_API =
-  "https://api.themoviedb.org/3/search/movie?&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&query=";
+  "https://api.themoviedb.org/3/search/movie?&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&query=1";
 const IMG_API = "https://image.tmdb.org/t/p/original";
+const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&page=`;
 const Movie = ({ handleId }) => {
+  
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState('')
   const [nextPage, setNextPage] = useState(1)
-
   useEffect(() => {
-    getMovies(FEATURED_API);
-  }, []);
+    getMovies(FEATURED_API+nextPage);
+  }, [nextPage]);
   const getMovies = (api) => {
     axios.get(api).then((res) => {
-      console.log(res.data.results);
+     
       setMovies(res.data.results);
     });
   };
@@ -33,38 +33,45 @@ const Movie = ({ handleId }) => {
   const handleChange = (e)=>{
     setSearch(e.target.value);
   }
-  const handleOnclick = ()=>{
-    setNextPage(nextPage + 1);
-    getMovies(
-      `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&page=${nextPage}`
-    );
-  }
-  const handlePrevClick=()=>{
+  
+  console.log(nextPage);
+  // const handlePrevClick=()=>{
+  //   if(nextPage === 1){
+  //     return
+  //   }
+  //   setNextPage(nextPage -1)
     
-    setNextPage(nextPage < 1 ? nextPage : nextPage -1)
-    getMovies(
-      `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&page=${nextPage}`
-    );
+    
+  //   console.log('prev',nextPage);
+  //   // getMovies(FEATURED_API + nextPage);
+  // }
+  // const handleNextClick = () => {
+  //   setNextPage(nextPage + 1);
 
-}
-console.log(nextPage);
+  //   console.log("next", nextPage);
+  //   // getMovies(FEATURED_API + nextPage);
+  // };
   return (
     <>
       <div className="search-form">
         <h2>Movie DataBase</h2>
 
         <form action="" onSubmit={handleSubmit}>
-          <input type="text" onChange={handleChange} value={search} />
+          <input type="text"
+           onChange={handleChange} 
+           value={search} 
+           placeholder="Search Film"/>
         </form>
       </div>
       <div className="button-group">
-        <button onClick={handleOnclick}>Next</button>
-        <button onClick={handlePrevClick}>Previous</button>
+        <button onClick={() => setNextPage(nextPage===1 ? nextPage :nextPage -1)}>Prev</button>
+        <button onClick={() => setNextPage(nextPage + 1)}>Next</button>
+       
       </div>
       <div className="movie-container">
-        {movies.map((data) => {
+        {movies.map((data ,i) => {
           return (
-            <div className="movie">
+            <div key={i} className="movie">
               <img src={IMG_API + data.poster_path}></img>
               <div className="movie-info">
                 <h4>{data.title}</h4>
@@ -82,6 +89,7 @@ console.log(nextPage);
           );
         })}
       </div>
+      
     </>
   );
 };
