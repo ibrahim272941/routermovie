@@ -23,7 +23,7 @@ const Trailer = ({ id }) => {
       <div className="trailer-overview">
         <div className="trailer-head">
           <h3 className="trailer-title">{id.original_title}</h3>
-          <img className="backdrop" src={IMG_API + id.backdrop_path} alt="" />
+          <img className="backdrop" src={IMG_API + id.poster_path} alt="" />
         </div>
         <div className="trailer-parag-div">
           <div className="vote">

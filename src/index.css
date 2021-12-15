@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -23,10 +24,10 @@ code {
 }
 
 .movie {
-  width: 10rem;
+  width: 14rem;
   margin-top: 1rem;
   position: relative;
-  padding: 1rem;
+ 
   overflow: hidden;
   margin-left: 2.5rem;
   box-shadow: 5px -2px 8px rgba(231, 229, 229, 0.568);
@@ -41,6 +42,7 @@ code {
   display: flex;
   justify-content: space-between;
   font-size: .7rem;
+  align-items: center;
 
 }
 
@@ -182,9 +184,67 @@ code {
   font-weight: 600;
   letter-spacing: .2rem;
   text-shadow: 1px 1px 2px rgba(7, 6, 6, 0.9);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-family: 'Mitr';
   box-shadow: 1px 2px 3px rgba(7, 6, 6, 0.9);
   
   
   
+}
+.search-form h2  {
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Mitr';
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(252, 251, 249, .9);
+} 
+.search-form h2 span{
+  color: red;
+}
+
+@media (max-width:1050px){
+  .movie {
+    width: 13rem;
+    
+
+  }
+
+  .movie-info {
+
+    
+  }
+
+  .movie-container .movie img {
+    
+
+
+  }
+}
+@media (max-width:1020px){
+  .movie {
+    width: 13rem;
+   margin:auto;
+   margin-top: 1rem;
+    
+
+  }
+
+  .movie-info {
+
+    
+  }
+
+  .movie-container .movie img {
+    
+
+
+  }
+}
+@media (max-width:530px){
+  .movie {
+    width: 16rem;
+    margin:auto;
+    margin-top: 1rem;
+
+  }
+
 }
