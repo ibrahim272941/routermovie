@@ -3,54 +3,32 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-
-
-
-
 const SEARCH_API =
   "https://api.themoviedb.org/3/search/movie?&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&query=1";
 const IMG_API = "https://image.tmdb.org/t/p/original";
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0dfeb1e3115d788bdd6ccd6d217d93cf&page=`;
 const Movie = ({ handleId }) => {
-  
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState('')
-  const [nextPage, setNextPage] = useState(1)
+  const [search, setSearch] = useState("");
+  const [nextPage, setNextPage] = useState(1);
   useEffect(() => {
-    getMovies(FEATURED_API+nextPage);
+    getMovies(FEATURED_API + nextPage);
   }, [nextPage]);
   const getMovies = (api) => {
     axios.get(api).then((res) => {
-     
       setMovies(res.data.results);
     });
   };
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    getMovies(SEARCH_API+search)
-
-  }
-  const handleChange = (e)=>{
+    getMovies(SEARCH_API + search);
+  };
+  const handleChange = (e) => {
     setSearch(e.target.value);
-  }
-  
-  console.log(nextPage);
-  // const handlePrevClick=()=>{
-  //   if(nextPage === 1){
-  //     return
-  //   }
-  //   setNextPage(nextPage -1)
-    
-    
-  //   console.log('prev',nextPage);
-  //   // getMovies(FEATURED_API + nextPage);
-  // }
-  // const handleNextClick = () => {
-  //   setNextPage(nextPage + 1);
+  };
 
-  //   console.log("next", nextPage);
-  //   // getMovies(FEATURED_API + nextPage);
-  // };
+  console.log(nextPage);
+
   return (
     <>
       {" "}
