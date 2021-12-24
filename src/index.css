@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,26 +12,28 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+    monospace;
 }
 
 .movie-container {
- background-image: linear-gradient(to right, #98dce4, #02343d);
+  background-image: linear-gradient(to right, #98dce4, #02343d);
   display: flex;
   flex-wrap: wrap;
 
-background-image: url('/public/login-background.jpg');
+  background-image: url('/public/login-background.jpg');
 
 
 }
-nav{
-opacity: .6;
- }
+
+nav {
+  opacity: .6;
+}
+
 .movie {
   width: 14rem;
   margin-top: 1rem;
   position: relative;
- 
+
   overflow: hidden;
   margin-left: 2.5rem;
   box-shadow: 5px -2px 8px rgba(231, 229, 229, 0.568);
@@ -142,38 +145,42 @@ opacity: .6;
   min-height: 20rem;
 }
 
-.search-form{
+.search-form {
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
   background-color: #025c80;
-  
+
 }
-.search-form form{
+
+.search-form form {
   width: 40%;
-  
+
 }
-.search-form form input{
+
+.search-form form input {
   background-color: #01709cbd;
   width: 100%;
   border: none;
   outline: none;
-  box-shadow:inset 1px 2px 3px rgba(7, 7, 7, 0.9);
+  box-shadow: inset 1px 2px 3px rgba(7, 7, 7, 0.9);
   color: aliceblue;
   height: 2rem;
   border-radius: 1rem;
-  
+
 }
+
 .button-group {
   display: flex;
   justify-content: center;
   padding: 1rem;
   box-shadow: 9px 1px 1px rgba(15, 15, 15, 0.9);
-  
+
   background-color: #025c80;
-  
+
 }
+
 .button-group button {
   width: 7rem;
   height: 3rem;
@@ -187,65 +194,51 @@ opacity: .6;
   font-weight: 600;
   letter-spacing: .2rem;
   text-shadow: 1px 1px 2px rgba(7, 6, 6, 0.9);
- font-family: 'Mitr';
+  font-family: 'Mitr';
   box-shadow: 1px 2px 3px rgba(7, 6, 6, 0.9);
-  
-  
-  
+
+
+
 }
-.search-form h2  {
+
+.search-form h2 {
   font-size: 2rem;
   font-weight: 900;
   font-family: 'Mitr';
   letter-spacing: 1px;
   text-shadow: 1px 1px 1px rgba(252, 251, 249, .9);
-} 
-.search-form h2 span{
+}
+
+.search-form h2 span {
   color: red;
 }
 
-@media (max-width:1050px){
+@media (max-width:1050px) {
   .movie {
     width: 13rem;
-    
-
-  }
-
-  .movie-info {
-
-    
-  }
-
-  .movie-container .movie img {
-    
 
 
   }
+
+
 }
-@media (max-width:1020px){
+
+@media (max-width:1020px) {
   .movie {
     width: 13rem;
-   margin:auto;
-   margin-top: 1rem;
-    
-
-  }
-
-  .movie-info {
-
-    
-  }
-
-  .movie-container .movie img {
-    
+    margin: auto;
+    margin-top: 1rem;
 
 
   }
+
+
 }
-@media (max-width:530px){
+
+@media (max-width:530px) {
   .movie {
     width: 16rem;
-    margin:auto;
+    margin: auto;
     margin-top: 1rem;
 
   }
